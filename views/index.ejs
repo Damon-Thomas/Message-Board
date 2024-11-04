@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Board</title>
+</head>
+<body>
+  <%- include('navbar', {links: links}) %>
+  <ul></ul>
+    <% for(let i = 0; i < messages.length; i++) { %>
+        <li>
+            <h3 class="userName"><%= messages[i].user%></h3>
+            <p class="messageText"><%= messages[i].text%></p>
+            <p class="dateText"><%= messages[i].added.toDateString()%></p>
+        </li>
+    <% } %>
+    </ul>
+</body>
+</html>

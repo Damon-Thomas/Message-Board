@@ -1,27 +1,17 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
+const boardRouter = require("./routes/boardRouter")
+const messageRouter = require("./routes/messageRouter")
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      added: new Date()
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      added: new Date()
-    }
-  ];
 
-  
-app.get("/", (req, res) => res.send("Hello, world!"));
+app.use("/", boardRouter)
+app.use("/new", messageRouter)
 
-const PORT = 3000;
+const PORT = 8080;
 app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`)
+    console.log(`Server running on ${PORT}`)
 });

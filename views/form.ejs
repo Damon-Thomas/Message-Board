@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board Form</title>
+</head>
+<body>
+    <%- include('navbar', {links: links}) %>
+    <form method="POST" action="/new">
+        <h2>Add a Message</h2>
+        <label for="nameInput">Your Name:</label>
+        <input name="nameInput" type="text">
+        <label for="messageInput">Your message:</label>
+        <input name="messageInput" type="text">
+        <button type="submit" >Post Message</button>
+    </form>
+</body>
+</html>
+ 
