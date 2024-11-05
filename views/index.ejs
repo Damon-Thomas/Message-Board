@@ -3,16 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Message Board</title>
+  
 </head>
 <body>
-  <%- include('navbar', {links: links}) %>
-  <ul></ul>
+  <div class="header home">
+    <%- include('navbar', {links: links}) %>
+    <h1 class="title">Message Board</h1>
+    <div class="empty"></div>
+  </div>
+  <ul class="messageBody">
     <% for(let i = 0; i < messages.length; i++) { %>
-        <li>
+        <li class="message">
             <h3 class="userName"><%= messages[i].user%></h3>
             <p class="messageText"><%= messages[i].text%></p>
             <p class="dateText"><%= messages[i].added.toDateString()%></p>
+          
         </li>
     <% } %>
     </ul>

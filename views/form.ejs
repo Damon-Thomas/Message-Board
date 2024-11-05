@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Message Board Form</title>
 </head>
+
 <body>
-    <%- include('navbar', {links: links}) %>
+    <div class="header new">
+        <%- include('navbar', {links: links}) %>
+            <h1 class="title">Post Message</h1>
+            <div class="empty"></div>
+    </div>
     <form method="POST" action="/new">
-        <h2>Add a Message</h2>
-        <label for="nameInput">Your Name:</label>
-        <input name="nameInput" type="text">
-        <label for="messageInput">Your message:</label>
-        <input name="messageInput" type="text">
-        <button type="submit" >Post Message</button>
+        <h2 class="formTitle">Add a Message</h2>
+        <div class="fInput">
+            <label for="nameInput">Your Name:</label>
+            <input name="nameInput" type="text">
+        </div>
+
+        <div class="fInput">
+            <label for="messageInput">Your message:</label>
+            <textarea name="messageInput" type="text" rows="2"></textarea>
+        </div>
+
+        <button type="submit">Post Message</button>
     </form>
 </body>
+
 </html>
- 
