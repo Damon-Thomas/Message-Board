@@ -16,7 +16,7 @@ app.use("/", boardRouter)
 app.use("/new", messageRouter)
 app.get("*",(req, res) => res.render("./errors/404.ejs") )
 
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;;
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`)
 });
