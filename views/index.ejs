@@ -14,11 +14,12 @@
     <div class="empty"></div>
   </div>
   <ul class="messageBody">
+    <p><% console.log('test', messages) %></p>
     <% for(let i = 0; i < messages.length; i++) { %>
         <li class="message">
-            <h3 class="userName"><%= messages[i].user%></h3>
-            <p class="messageText"><%= messages[i].text%></p>
-            <p class="dateText"><%= messages[i].added.toDateString()%></p>
+            <h3 class="userName"><%= messages[i].username%></h3>
+            <p class="messageText"><%= messages[i].message%></p>
+            <p class="dateText"><%= messages[i].date%></p>
           
         </li>
     <% } %>

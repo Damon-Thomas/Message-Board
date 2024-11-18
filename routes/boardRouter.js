@@ -1,10 +1,8 @@
 const { Router } = require("express");
 const boardRouter = Router();
-const db = require("../model/messagedb.js")
+const messageController = require("../controllers/messageController.js")
 
 
-
-boardRouter.get("/", (req, res) => res.render("index", {links: db.links, messages: db.messages}))
-
+boardRouter.get("/", messageController.getMessages)
 
 module.exports = boardRouter
